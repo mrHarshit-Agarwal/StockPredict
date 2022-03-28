@@ -1,12 +1,10 @@
 import React,{useEffect}from 'react';
-import { Route, Link,Redirect } from "react-router-dom";
+import { Route, Link,Navigate } from "react-router-dom";
 import '../assets/css/access.css';
 import Login from 'views/Login';
 import SignUp from 'views/Signup';
 function Access(props){
-    useEffect(() => {
-      
-      }, []);
+   
 return (
 <div className="App">
 <nav className="navbar navbar-expand-lg navbar-light fixed-top">
@@ -29,7 +27,7 @@ return (
          
 <Route path="/access/login" render={() => <Login />} />
 <Route path="/access/signup"render={() => <SignUp />} />
-<Redirect from="/access" to="/access/login" />
+<Navigate from="/access" to="/access/login" />
 </div>
 </div>
 </div>
