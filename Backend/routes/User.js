@@ -27,7 +27,9 @@ router.post("/signup", async (req, res) => {
             await newUser
               .save()
               .then(() => {
-                res.status(200).send(newUser);
+                res.json({
+                  status:200
+                });
               })
               .catch(err => {
                 console.log("Error is ", err.message);
@@ -35,7 +37,11 @@ router.post("/signup", async (req, res) => {
           }
         });
       } else {
-        res.send("User already exists...");
+
+        res.json({
+          staus:404,
+          message:"User already exists..."
+        });
       }
     })
     .catch(err => {
@@ -74,13 +80,15 @@ router.post("/login", async (req, res) => {
                     console.log("Error is ", err.message);
                   }
                   res.json({
-                    success: true,
-                    token: "Bearer " + token
+                    status: 200,
+                    message: "Bearer " + token
                   });
                 }
               );
             } else {
-              res.send("User Unauthorized Access");
+              res.json({
+                status: false
+              });
             }
           }
         );

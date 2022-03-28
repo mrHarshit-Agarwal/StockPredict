@@ -1,6 +1,6 @@
 import React from "react";
 import ChartistGraph from "react-chartist";
-// react-bootstrap components
+// react-bootstrap components 
 import {
   Badge,
   Button,
@@ -637,4 +637,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default (Dashboard);

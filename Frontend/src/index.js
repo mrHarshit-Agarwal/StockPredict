@@ -1,30 +1,54 @@
- 
+
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter as Router,Route,Routes } from "react-router-dom";
 
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-
-
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./assets/css/animate.min.css";
-import "./assets/scss/light-bootstrap-dashboard-react.scss?v=2.0.0";
-import "./assets/css/demo.css";
-// import "@fortawesome/fontawesome-free/css/all.min.css";
-import Access from "layouts/Access";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
+import { Provider } from "react-redux"
+// import {Dummy} from "./components/dummy.component"
+// import { createBrowserHistozry } from "history";
+import  rootReducer  from './store/Reducers/index'
+import { applyMiddleware, createStore } from "redux";
 import AdminLayout from "layouts/Admin.js";
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import thunk from "redux-thunk";
+// import {  Router, Route } from "react-router-dom";
+import routes from "./routes";
+require('dotenv').config();
+const store = createStore(rootReducer, applyMiddleware(thunk))
+const getRoutes = (routes) => {
+    return routes.map((prop, key) => {
+       
+      if (prop.layout === "/admin") {
+        return (
+          <Route
+            path={prop.layout + prop.path}
+            element={<prop.component {...prop} />}
+            key={key}
+          />
+        );
+      } else {
+        return null;
+      }
+    });
+  };
+ 
 
 ReactDOM.render(
-  <BrowserRouter>
-  wer
+    <Provider  store={store}>
+    {/* <Router history={createHistory()}> */}
+    <Router>
     <Routes>
-      
-      <Route path="/access" render={(props) => <Access {...props}/>}/>
-      <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
-      <Navigate from="/" to="/access" />
-    </Routes>
-     
-  </BrowserRouter>
-  ,
-  document.getElementById("root")
+            
+            <Route exact path='/admin' element={<AdminLayout />}>
+             
+                {getRoutes(routes)} 
+            </Route>
+            <Route path='*' element={<App />} />
+    </Routes>        
+    </Router>
+    </Provider>,
+    document.getElementById("root")
 );
+
+serviceWorker.unregister();
