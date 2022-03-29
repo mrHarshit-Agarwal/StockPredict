@@ -21,7 +21,17 @@ const Login =  (props) => {
             message.error("Fill the fields properly");
             return
         };
-       
+        const {password,email}=user;
+        const res=await fetch("/login",{
+           method:"POST",
+           headers:{
+               "Content-type":"application/json"
+           },
+           body:JSON.stringify({
+               email, password
+           })
+
+        })
         props.loginRequest(values);
     }
     console.log("state"+props.token);
