@@ -2,21 +2,22 @@ var express = require("express");
 
 var router = express.Router();
 
-var feedback = require("../model/feedback");
+var Feedback = require("../model/feedback");
 
 
 router.post("/feedback", async (req, res) => {
-  var newUser = new User({
+  var feedback = new Feedback({
     name: req.body.name,
     desc: req.body.desc,
     
   });
-});
 
-  student.save(function (err) {
+
+  feedback.save(function (err) {
     if (err) {
         return next(err);
     }
-    res.send('student Created successfully');
+    res.send('Feedback sent');
+});
 });
 module.exports = router;
