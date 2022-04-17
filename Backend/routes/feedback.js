@@ -13,11 +13,16 @@ router.post("/feedback", async (req, res) => {
   });
 
 
-  feedback.save(function (err) {
-    if (err) {
-        return next(err);
-    }
-    res.send('Feedback sent');
-});
-});
+  feedback.save()
+          .then(() => {
+            res.json({
+              staus:200,
+              message:"Your feedback successfully saved."
+            });
+        })
+        .catch(err => {
+          console.log("Error is ", err.message);
+        });
+        
+})
 module.exports = router;
