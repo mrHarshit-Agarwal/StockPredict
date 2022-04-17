@@ -1,5 +1,4 @@
 import React from 'react';
-import StarRatings from 'react-star-ratings';
 
 const defaultBodyStyles = {
 	padding: '10px',
@@ -15,7 +14,7 @@ const defaultMessageStyles = {
 	fontFamily: 'arial'
 }
 
-const Body = ({ bodyText, bodyStyles, nameInput, messageInput, emailInput, ratingInput, handleMessageInput, showNameInput, showMessageInput, showRatingInput, showEmailInput, numberOfStars }) => (
+const Body = ({ bodyText, bodyStyles, nameInput, messageInput, emailInput, handleMessageInput, showNameInput, showMessageInput, showEmailInput }) => (
 	<div style={bodyStyles}>
 		<div style={defaultMessageStyles}>
 			<p>{bodyText}</p>

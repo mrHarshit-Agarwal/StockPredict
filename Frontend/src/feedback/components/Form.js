@@ -23,7 +23,6 @@ class Form extends Component {
       handleSubmit,
       handleMessageInput,
       handleEmailInput,
-      handleRatingInput,
       handleCustomPosition,
       messageInput,
       emailInput,
