@@ -26,13 +26,13 @@ function Sidebar({ color, image, routes }) {
           >
             <div className="logo-img">
               <img
-                src={require("assets/img/reactlogo.png").default}
+                src={require("assets/img/reactlogo.png")}
                 alt="..."
               />
             </div>
           </a>
-          <a className="simple-text" href="http://www.creative-tim.com">
-            Creative Tim
+          <a className="simple-text" href="">
+            Stock Predict
           </a>
         </div>
         <Nav>
