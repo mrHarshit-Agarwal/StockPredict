@@ -8,12 +8,12 @@ const DbSchema = mongoose.Schema({
 
     desc:{
         type:String,
-        required: true
+        required: true,
        
     },
     email:{
         type:String,
-        required:true;
+        required:true,
     }
     // createdAt:{
     //     type: Date,
