@@ -22,6 +22,10 @@ router.post("/feedback", async (req, res) => {
             });
         })
         .catch(err => {
+          res.json({
+            staus:406,
+            message:"Feedback not saved."
+        });
           console.log("Error is ", err.message);
         });
         
