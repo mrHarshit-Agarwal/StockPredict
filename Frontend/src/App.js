@@ -10,6 +10,7 @@ import {  Route, Link } from "react-router-dom";
 import Login from "./components/login.component";
 import {Routes} from "react-router-dom";
 import SignUp from "./components/signup.component";
+import Feedback from 'feedback/Feedback';
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
             <Route exact path='/' element={<Login/>} /> 
             <Route path="/signin" element={<Login/>} />
             <Route path="/signup" element={<SignUp/>} />
+            <Route path='/feedback' element={
+            <Feedback  />
+            }/>
           </Routes>
         </div>
       </div>

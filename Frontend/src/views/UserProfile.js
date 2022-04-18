@@ -25,7 +25,7 @@ function User() {
               </Card.Header>
               <Card.Body>
                 <Form>
-                  <Row>
+                  {/* <Row>
                     <Col className="pr-1" md="5">
                       <Form.Group>
                         <label>Company (disabled)</label>
@@ -58,7 +58,7 @@ function User() {
                         ></Form.Control>
                       </Form.Group>
                     </Col>
-                  </Row>
+                  </Row> */}
                   <Row>
                     <Col className="pr-1" md="6">
                       <Form.Group>
@@ -82,7 +82,7 @@ function User() {
                     </Col>
                   </Row>
                   <Row>
-                    <Col md="12">
+                    {/* <Col md="12">
                       <Form.Group>
                         <label>Address</label>
                         <Form.Control
@@ -91,9 +91,20 @@ function User() {
                           type="text"
                         ></Form.Control>
                       </Form.Group>
+                    </Col> */}
+                    <Col className="pl-1" md="4">
+                      <Form.Group>
+                        <label htmlFor="exampleInputEmail1">
+                          Email address
+                        </label>
+                        <Form.Control
+                          placeholder="Email"
+                          type="email"
+                        ></Form.Control>
+                      </Form.Group>
                     </Col>
                   </Row>
-                  <Row>
+                  {/* <Row>
                     <Col className="pr-1" md="4">
                       <Form.Group>
                         <label>City</label>
@@ -138,7 +149,7 @@ function User() {
                         ></Form.Control>
                       </Form.Group>
                     </Col>
-                  </Row>
+                  </Row> */}
                   <Button
                     className="btn-fill pull-right"
                     type="submit"
