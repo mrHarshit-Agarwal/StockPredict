@@ -6,8 +6,7 @@ var Profile = require("../model/usermodel");
 
 router.post("/updateprofile/:id", async (req, res) => {
 Profile.findByIdAndUpdate(req.params.id, {$set: {
-  fname: req.body.fname,
-  lname: req.body.lname,
+  name: req.body.name,
   email:req.body.email
 
   
