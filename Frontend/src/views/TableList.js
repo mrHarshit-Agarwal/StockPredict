@@ -40,8 +40,8 @@ function TableList() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1</td>
+                  <tr>
+                  <td>1</td>
                       <td>Dakota Rice</td>
                       <td>$36,738</td>
                       <td>Niger</td>
