@@ -4,17 +4,16 @@ const DbSchema = mongoose.Schema({
     name:{
         type:String,
         required: true
-
     },
-    
-    email:{
+
+    desc:{
         type:String,
-        required: true
+        required: true,
        
     },
-    password:{
+    email:{
         type:String,
-        required:true
+        required:true,
     }
     // createdAt:{
     //     type: Date,
@@ -22,4 +21,4 @@ const DbSchema = mongoose.Schema({
     // }
 })
 
-module.exports = mongoose.model('User',DbSchema)
+module.exports = mongoose.model('Feedback',DbSchema)
