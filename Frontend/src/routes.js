@@ -8,6 +8,7 @@ import Maps from "./views/Maps.js";
 import Notifications from "./views/Notifications.js";
 import Upgrade from "./views/Upgrade.js";
 import Feedback from "./views/Feedback"
+import Information from "./views/Information.js"
 const dashboardRoutes = [
   // {
   //   upgrade: true,
@@ -42,7 +43,7 @@ const dashboardRoutes = [
     path: "/information",
     name: "View Information",
     icon: "nc-icon nc-paper-2",
-    component: Typography,
+    component: Information,
     layout: "/admin",
   },
   // {
