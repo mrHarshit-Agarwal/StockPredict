@@ -1,5 +1,5 @@
-import React from "react";
-
+import React,{useState,useEffect} from "react";
+import axios from "axios";
 // react-bootstrap components
 import {
   Badge,
@@ -14,6 +14,30 @@ import {
 } from "react-bootstrap";
 
 function User() {
+ 
+  const handleSubmit = (e) => {
+      e.preventDefault();
+      // console.log(e.target[0].value+e.target[1].value+e.target[2].value);
+      var postData = {
+        email: "test@test.com",
+        password: "password"
+      };
+      
+      let axiosConfig = {
+        headers: {
+            'Content-Type': 'application/json;charset=UTF-8',
+            "Access-Control-Allow-Origin": "*",
+        }
+      };
+      
+      axios.post('http://<host>:<port>/<path>', postData, axiosConfig)
+      .then((res) => {
+        console.log("RESPONSE RECEIVED: ", res);
+      })
+      .catch((err) => {
+        console.log("AXIOS ERROR: ", err);
+      })
+  }
   return (
     <>
       <Container fluid>
@@ -24,7 +48,7 @@ function User() {
                 <Card.Title as="h4">Edit Profile</Card.Title>
               </Card.Header>
               <Card.Body>
-                <Form>
+                <Form onSubmit={(e) => handleSubmit(e)}>
                   {/* <Row>
                     <Col className="pr-1" md="5">
                       <Form.Group>
@@ -64,8 +88,8 @@ function User() {
                       <Form.Group>
                         <label>First Name</label>
                         <Form.Control
-                          defaultValue="Mike"
-                          placeholder="Company"
+                          defaultValue=""
+                          placeholder="first name"
                           type="text"
                         ></Form.Control>
                       </Form.Group>
@@ -74,8 +98,8 @@ function User() {
                       <Form.Group>
                         <label>Last Name</label>
                         <Form.Control
-                          defaultValue="Andrew"
-                          placeholder="Last Name"
+                           defaultValue=""
+                           placeholder="last name"
                           type="text"
                         ></Form.Control>
                       </Form.Group>
