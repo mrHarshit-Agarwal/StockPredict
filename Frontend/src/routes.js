@@ -7,7 +7,7 @@ import Icons from "./views/Icons.js";
 import Maps from "./views/Maps.js";
 import Notifications from "./views/Notifications.js";
 import Upgrade from "./views/Upgrade.js";
-
+import Feedback from "./views/Feedback"
 const dashboardRoutes = [
   // {
   //   upgrade: true,
@@ -63,7 +63,7 @@ const dashboardRoutes = [
     path: "/feedback",
     name: "Feedback",
     icon: "nc-icon nc-bell-55",
-    component: Notifications,
+    component: Feedback,
     layout: "/admin",
   }
 ];

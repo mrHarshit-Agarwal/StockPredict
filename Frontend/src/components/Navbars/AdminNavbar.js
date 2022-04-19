@@ -2,11 +2,14 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { Navbar, Container, Nav, Dropdown, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 import routes from "routes.js";
 
 function Header() {
   const location = useLocation();
+  let navigate = useNavigate();
+  // const history = useHistory();
   const mobileSidebarToggle = (e) => {
     e.preventDefault();
     document.documentElement.classList.toggle("nav-open");
@@ -182,7 +185,11 @@ function Header() {
               <Nav.Link
                 className="m-0"
                 href="#pablo"
-                onClick={(e) => e.preventDefault()}
+                onClick={(e) => {
+                  // e.preventDefault()
+                  localStorage.clear();
+                  navigate(`/access/login`);
+                }}
               >
                 <span className="no-icon">Log out</span>
               </Nav.Link>
