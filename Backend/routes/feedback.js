@@ -9,6 +9,7 @@ router.post("/feedback", async (req, res) => {
   var feedback = new Feedback({
     name: req.body.name,
     desc: req.body.desc,
+    email:req.body.email
     
   });
 
@@ -21,6 +22,10 @@ router.post("/feedback", async (req, res) => {
             });
         })
         .catch(err => {
+          res.json({
+            staus:406,
+            message:"Feedback not saved."
+        });
           console.log("Error is ", err.message);
         });
         
