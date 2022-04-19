@@ -1,4 +1,4 @@
-import React from "react"
+import React,{useEffect,useState} from "react"
 import {
     Alert,
     Badge,
@@ -24,6 +24,7 @@ import {
   }
 
 function Feedback (){
+ 
     return (<div>
         <Container fluid>
         <Card>
