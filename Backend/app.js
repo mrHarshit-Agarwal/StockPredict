@@ -31,8 +31,9 @@ app.get("/", (req, res) => {
 });
 
 const profile = require("./routes/User");
+const feedback=require("./routes/feedback");
 app.use("/api", profile);
-
+app.use("/pages",feedback);
 app.listen(3001, () => {
   console.log(`Server is listening on port ${3001}`);
 });

@@ -22,7 +22,7 @@ const Login =  (props) => {
             message.error("Fill the fields properly");
             return
         };
-       
+        
         props.loginRequest(values);
     }
     console.log("state"+props.token);
