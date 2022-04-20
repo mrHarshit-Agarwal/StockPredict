@@ -8,7 +8,7 @@ class Footer extends Component {
       <footer className="footer px-0 px-lg-3">
         <Container fluid>
           <nav>
-            <ul className="footer-menu">
+            {/* <ul className="footer-menu">
               <li>
                 <a href="#pablo" onClick={(e) => e.preventDefault()}>
                   Home
@@ -29,7 +29,7 @@ class Footer extends Component {
                   Blog
                 </a>
               </li>
-            </ul>
+            </ul> */}
             <p className="copyright text-center">
               © {new Date().getFullYear()}{" "}
                 Stock Predict Team

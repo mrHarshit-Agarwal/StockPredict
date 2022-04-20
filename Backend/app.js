@@ -9,30 +9,32 @@ var User = require("./model/usermodel");
 var db = process.env.MONGO_URL
 var app = express();
 var passport = require("passport");
+app.use(passport.initialize());
+
+require("./strategies/jsonwtStrategy")(passport);
 app.use(cors());
 var port = process.env.PORT || 3001;
 
-var bcrypt = require('bcrypt')
-var saltRouds = 10
 
 const connectDB = require('./database/connection')
 connectDB();
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 
-
-app.use(passport.initialize());
-
 //Config for JWT strategy
-require("./strategies/jsonwtStrategy")(passport);
 
 app.get("/", (req, res) => {
   res.status(200).send(`Hi Welcome to the Keepify`);
 });
 
 const profile = require("./routes/User");
-app.use("/api", profile);
+const feedback=require("./routes/feedback");
+const updateprofile=require("./routes/updateprofile");
 
-app.listen(port, () => {
-  console.log(`Server is listening on port ${port}`);
+
+app.use("/api", profile);
+app.use("/pages",passport.authenticate("jwt", { session: false }),updateprofile);
+app.use("/pages",passport.authenticate("jwt", { session: false }),feedback);
+app.listen(3001, () => {
+  console.log(`Server is listening on port ${3001}`);
 });
