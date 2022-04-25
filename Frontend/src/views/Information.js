@@ -18,13 +18,16 @@ const Information = () => {
           <h4 className="topic-heading">LSTM</h4>
           <p className="para">It is special kind of recurrent neural network that is capable of learning long term dependencies in data. 
             This is achieved because the recurring module of the model has a combination of four layers interacting with each other.</p>
-          <p>Long short term memory (LSTM) is a model that increases the memory of recurrent neural networks. Recurrent neural networks hold short term memory in that they allow earlier determining information to be employed in the current neural networks. 
+          <p className="para">Long short term memory (LSTM) is a model that increases the memory of recurrent neural networks. Recurrent neural networks hold short term memory in that they allow earlier determining information to be employed in the current neural networks. 
             For immediate tasks, the earlier data is used. We may not possess a list of all of the earlier information for the neural node. In RNNs, LSTMs are very widely used in Neural networks. 
             Their effectiveness should be implemented to multiple sequence modelling problems in many application domains like video, NLP, geospatial, and time-series.</p>
           <img src={require("../assets/img/LSTM.png")} alt="lstm model" className="image" />
           <br />
           <img src={require("../assets/img/LSTM_home.png")} alt="LSTM-image" className="image" width={700} height={312} />
           <br /><br />
+          <h4 className="topic-heading">LSTM Model implementation</h4>
+          <img src={require("../assets/img/graph.png")} alt="lstm graph" className="image" />
+          <br />
           <h4 className="topic-heading">Recurrent Neural Network (RNN)</h4>
           <p className="para">The neurons of RNN have a cell state/memory, and input is processed according to this internal state, 
             which is achieved with the help of loops with in the neural network.</p>
