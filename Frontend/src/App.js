@@ -11,6 +11,7 @@ import Login from "./components/login.component";
 import {Routes} from "react-router-dom";
 
 import SignUp from "./components/signup.component";
+import Feedback from 'feedback/Feedback';
 
 function App() {
   return (
