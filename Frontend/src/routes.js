@@ -38,7 +38,7 @@ const dashboardRoutes = [
     icon: "nc-icon nc-notes",
     component: TableList,
     layout: "/admin",
-  },
+  }, 
   {
     path: "/information",
     name: "View Information",
