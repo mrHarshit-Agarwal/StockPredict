@@ -1,4 +1,5 @@
 import React from 'react';
+
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 // import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/css/animate.min.css";
@@ -11,6 +12,7 @@ import Login from "./components/login.component";
 import {Routes} from "react-router-dom";
 
 import SignUp from "./components/signup.component";
+import Feedback from 'feedback/Feedback';
 
 function App() {
   return (

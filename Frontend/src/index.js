@@ -37,6 +37,9 @@ const getRoutes = (routes) => {
 ReactDOM.render(
     <Provider  store={store}>
     {/* <Router history={createHistory()}> */}
+    <div class='wave -one'></div>
+  <div class='wave -two'></div>
+  <div class='wave -three'></div>
     <Router>
     <Routes>
             
