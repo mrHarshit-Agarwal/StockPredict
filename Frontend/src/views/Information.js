@@ -23,10 +23,11 @@ const Information = () => {
             Their effectiveness should be implemented to multiple sequence modelling problems in many application domains like video, NLP, geospatial, and time-series.</p>
           <img src={require("../assets/img/LSTM.png")} alt="lstm model" className="image" />
           <br />
+          <br />
           <img src={require("../assets/img/LSTM_home.png")} alt="LSTM-image" className="image" width={700} height={312} />
           <br /><br />
           <h4 className="topic-heading">LSTM Model implementation</h4>
-          <img src={require("../assets/img/graph.png")} alt="lstm graph" className="image" />
+          <img src={require("../assets/img/graph.png")} alt="lstm graph" className="image" width={800} height={400} />
           <br />
           <h4 className="topic-heading">Recurrent Neural Network (RNN)</h4>
           <p className="para">The neurons of RNN have a cell state/memory, and input is processed according to this internal state, 
