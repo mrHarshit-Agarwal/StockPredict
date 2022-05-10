@@ -13,7 +13,7 @@ const Information = () => {
         <div className="home">
           <h3 className="home-heading">Stock Prediction using Neural Networks</h3>
           <h6 className="sub-heading">LSTM and RNN to predict stock price</h6>
-          <img src={require("../assets/img/stock-img.jpeg")} alt="home image" className="image" width={700} height={469} />
+          <img src={require("../assets/img/stock-img.jpeg")} alt="home image" className="image" width={700} height={450} />
           <br /><br />
           <h4 className="topic-heading">LSTM</h4>
           <p className="para">It is special kind of recurrent neural network that is capable of learning long term dependencies in data. 
@@ -21,10 +21,10 @@ const Information = () => {
           <p className="para">Long short term memory (LSTM) is a model that increases the memory of recurrent neural networks. Recurrent neural networks hold short term memory in that they allow earlier determining information to be employed in the current neural networks. 
             For immediate tasks, the earlier data is used. We may not possess a list of all of the earlier information for the neural node. In RNNs, LSTMs are very widely used in Neural networks. 
             Their effectiveness should be implemented to multiple sequence modelling problems in many application domains like video, NLP, geospatial, and time-series.</p>
-          <img src={require("../assets/img/LSTM.png")} alt="lstm model" className="image" />
+          <img src={require("../assets/img/LSTM.png")} alt="lstm model" className="image" width={680} height={450} />
           <br />
           <br />
-          <img src={require("../assets/img/LSTM_home.png")} alt="LSTM-image" className="image" width={700} height={312} />
+          <img src={require("../assets/img/LSTM_home.png")} alt="LSTM-image" className="image" width={600} height={312} />
           <br /><br />
           <h4 className="topic-heading">LSTM Model implementation</h4>
           <img src={require("../assets/img/graph.png")} alt="lstm graph" className="image" width={650} height={350} />
