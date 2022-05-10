@@ -1,35 +1,30 @@
 import React,{useState,useEffect} from "react";
-// react-bootstrap components 
+import {message} from "antd";
 import { Dropdown } from 'react-bootstrap';
 import "./Dashboard.css";
-
+import axios from "axios";
 export default () => {
-  const [company,setCompany] = useState("");
-  let data =JSON.stringify({
-   company
-  });
-  // useEffect(()=>{
-  //   axios.post(`http://localhost:3001/api/image/`,data, {
-
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //     "Access-Control-Allow-Origin":"*"
-  //   },
-   
-  // })
-
-  // .then(json => {
+  const [company,setCompany] = useState("tatamotors");
+  const [screenShot, setScreenshot] = useState(undefined);
+  useEffect(()=>{
     
-  //   if(json.data.status == 200){
-      
-  //   }
-  //   else if(json.status === false){
-      
-  //     message.error("Invalid request.");
-  //   }
-  // })
-  // .catch(err =>alert(err))
-  // },[company]);
+    axios.get(`http://localhost:3001/pages/image/${company}`, {
+
+    headers: {
+     
+      "Authorization":localStorage.getItem("token")
+    },
+    responseType: 'image/png'
+  })
+
+  .then(response => {
+    setScreenshot(response);
+  })
+  .catch(err =>{
+    console.log("error:       "+err);
+    message.error("Invalid request.");
+  })
+  },[company]);
   return(
    <> 
   <Dropdown>
@@ -237,6 +232,9 @@ export default () => {
     }}>Zeel</Dropdown.Item>
     </Dropdown.Menu>
 </Dropdown>
+<div>
+    <img src={screenShot} alt="showing screen capture" />
+</div>
 </>
 )
 };
