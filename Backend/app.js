@@ -30,11 +30,12 @@ app.get("/", (req, res) => {
 const profile = require("./routes/User");
 const feedback=require("./routes/feedback");
 const updateprofile=require("./routes/updateprofile");
-
+const images = require("./routes/dashboard");
 
 app.use("/api", profile);
 app.use("/pages",passport.authenticate("jwt", { session: false }),updateprofile);
 app.use("/pages",passport.authenticate("jwt", { session: false }),feedback);
-app.listen(3001, () => {
+app.use("/pages",passport.authenticate("jwt", { session: false }),images);
+module.exports=app.listen(3001, () => {
   console.log(`Server is listening on port ${3001}`);
 });
