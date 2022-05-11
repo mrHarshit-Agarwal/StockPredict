@@ -5,26 +5,27 @@ import "./Dashboard.css";
 import axios from "axios";
 export default () => {
   const [company,setCompany] = useState("tatamotors");
-  const [screenShot, setScreenshot] = useState(undefined);
-  useEffect(()=>{
-    
-    axios.get(`http://localhost:3001/pages/image/${company}`, {
-
-    headers: {
-     
-      "Authorization":localStorage.getItem("token")
-    },
-    responseType: 'image/png'
-  })
-
-  .then(response => {
-    setScreenshot(response);
-  })
-  .catch(err =>{
-    console.log("error:       "+err);
-    message.error("Invalid request.");
-  })
-  },[company]);
+  // const [screenShot, setScreenshot] = useState(undefined);
+  // useEffect(()=>{
+  //   axios.get(`http://localhost:3001/pages/image/${company}`, {
+  //   headers: {
+  //     'Content-Type': 'image/png',
+  //     "Authorization":localStorage.getItem("token")
+  //   }
+  // })
+  // .then(async (response) => {
+  //   const imageBlob = await new Blob([response.data]);
+  //   return imageBlob;
+  // }).then((response) =>{
+  //   const imageObjectURL = URL.createObjectURL(response);
+  //   console.log(imageObjectURL);
+  //   setScreenshot(imageObjectURL);
+  // })
+  // .catch(err =>{
+  //   console.log("error:       "+err);
+  //   message.error("Invalid request.");
+  // })
+  // },[company]);
   return(
    <> 
   <Dropdown>
@@ -232,8 +233,9 @@ export default () => {
     }}>Zeel</Dropdown.Item>
     </Dropdown.Menu>
 </Dropdown>
-<div>
-    <img src={screenShot} alt="showing screen capture" />
+<div className="images">
+    <h2 className="title">{company}</h2>
+    <img src={"http://localhost:3001/"+company+'.png'} height={500} width={900} alt="showing screen capture" />
 </div>
 </>
 )
