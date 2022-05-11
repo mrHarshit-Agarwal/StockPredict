@@ -44,7 +44,7 @@ function Header() {
           <Navbar.Brand
             href="#home"
             onClick={(e) => e.preventDefault()}
-            className="mr-2"
+            className="mr-2 navbar-title"
           >
             {getBrandText()}
           </Navbar.Brand>
