@@ -1,34 +1,30 @@
 import React,{useState,useEffect} from "react";
-// react-bootstrap components 
+import {message} from "antd";
 import { Dropdown } from 'react-bootstrap';
 import "./Dashboard.css";
-
+import axios from "axios";
 export default () => {
-  const [company,setCompany] = useState("");
-  let data =JSON.stringify({
-   company
-  });
+  const [company,setCompany] = useState("tatamotors");
+  // const [screenShot, setScreenshot] = useState(undefined);
   // useEffect(()=>{
-  //   axios.post(`http://localhost:3001/api/image/`,data, {
-
+  //   axios.get(`http://localhost:3001/pages/image/${company}`, {
   //   headers: {
-  //     "Content-Type": "application/json",
-  //     "Access-Control-Allow-Origin":"*"
-  //   },
-   
-  // })
-
-  // .then(json => {
-    
-  //   if(json.data.status == 200){
-      
-  //   }
-  //   else if(json.status === false){
-      
-  //     message.error("Invalid request.");
+  //     'Content-Type': 'image/png',
+  //     "Authorization":localStorage.getItem("token")
   //   }
   // })
-  // .catch(err =>alert(err))
+  // .then(async (response) => {
+  //   const imageBlob = await new Blob([response.data]);
+  //   return imageBlob;
+  // }).then((response) =>{
+  //   const imageObjectURL = URL.createObjectURL(response);
+  //   console.log(imageObjectURL);
+  //   setScreenshot(imageObjectURL);
+  // })
+  // .catch(err =>{
+  //   console.log("error:       "+err);
+  //   message.error("Invalid request.");
+  // })
   // },[company]);
   return(
    <> 
@@ -237,6 +233,10 @@ export default () => {
     }}>Zeel</Dropdown.Item>
     </Dropdown.Menu>
 </Dropdown>
+<div className="images">
+    <h2 className="title">{company}</h2>
+    <img src={"http://localhost:3001/"+company+'.png'} height={500} width={900} alt="showing screen capture" />
+</div>
 </>
 )
 };

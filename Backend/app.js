@@ -14,7 +14,7 @@ app.use(passport.initialize());
 require("./strategies/jsonwtStrategy")(passport);
 app.use(cors());
 var port = process.env.PORT || 3001;
-
+var path = require("path");
 
 const connectDB = require('./database/connection')
 connectDB();
@@ -30,11 +30,14 @@ app.get("/", (req, res) => {
 const profile = require("./routes/User");
 const feedback=require("./routes/feedback");
 const updateprofile=require("./routes/updateprofile");
+const images = require("./routes/dashboard");
 
-
+var dir = path.join(__dirname, 'images');
+app.use(express.static(dir));
 app.use("/api", profile);
 app.use("/pages",passport.authenticate("jwt", { session: false }),updateprofile);
 app.use("/pages",passport.authenticate("jwt", { session: false }),feedback);
-app.listen(3001, () => {
+// app.use("/pages",images);
+module.exports=app.listen(3001, () => {
   console.log(`Server is listening on port ${3001}`);
 });
