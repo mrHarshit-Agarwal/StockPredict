@@ -38,6 +38,6 @@ const updateprofile=require("./routes/updateprofile");
 app.use("/api", profile);
 app.use("/pages",updateprofile);
 app.use("/pages",feedback);
-app.listen(port, () => {
+module.exports=app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
 });
