@@ -31,7 +31,7 @@ chai.use(chaiHttp);
                   expect(newUser).to.haveOwnProperty('password');
                   expect(newUser.email).to.be.a('string');
                   expect(newUser.password).to.be.a('string');
-                  expect(newUser).to.have.property('email').with.lengthOf(size);
+                  expect(newUser).to.have.property('email').with.lengthOf(size+1);
                   expect(newUser).to.have.property('email').that.does.include('@');
                   expect(newUser).to.have.property('email').equal('Honeypatel123@gmail.com',"valid field");
                   expect('Content-Type', /json/);
