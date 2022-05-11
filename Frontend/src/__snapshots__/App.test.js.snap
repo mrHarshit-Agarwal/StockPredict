@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render correctly in "debug" mode 1`] = `
+<div
+  className="App"
+>
+  <nav
+    className="navbar navbar-expand-lg navbar-light fixed-top"
+  >
+    <div
+      className="container"
+    >
+      <Link
+        className="navbar-brand"
+        to="/sign-in"
+      >
+        StockPredict
+      </Link>
+      <div
+        className="collapse navbar-collapse"
+        id="navbarTogglerDemo02"
+      >
+        <ul
+          className="navbar-nav ml-auto"
+        >
+          <li
+            className="nav-item"
+          >
+            <Link
+              className="nav-link"
+              to="/access/login"
+            >
+              Sign in
+            </Link>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <Link
+              className="nav-link"
+              to="/access/signup"
+            >
+              Sign up
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div
+    className="outer"
+  >
+    <div
+      className="inner"
+    >
+      <Routes>
+        <Route
+          element={<UNDEFINED />}
+          exact={true}
+          path="/"
+        />
+        <Route
+          element={<UNDEFINED />}
+          path="/access/login"
+        />
+        <Route
+          element={<UNDEFINED />}
+          path="/access/signup"
+        />
+        <Route
+          element={
+            <Navigate
+              to="/access/login"
+            />
+          }
+          path="*"
+        />
+      </Routes>
+    </div>
+  </div>
+</div>
+`;
