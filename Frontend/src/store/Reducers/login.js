@@ -4,7 +4,7 @@ export const LOGIN_REQUEST = "Login.LOGIN_REQUEST"
 export const LOGIN_SUCCESS = "Login.LOGIN_SUCCESS"
 export const LOGIN_FAILURE = "Login.LOGIN_FAILURE"
 export const LOGOUT = "Login.LOGOUT"
-
+export const STATUS_CHANGE = "Login.STATUS_CHANGE"
 export const SET_CREDENTIALS = "Login.SET_CREDENTIALS"
 export const PASSWORD_CHANGED = "Login.PASSWORD_CHANGED"
 
@@ -56,6 +56,10 @@ export const logout = () => (dispatch) => {
 export const setCredentials = () => (dispatch) => {
   const token = localStorage.getItem("token");
   dispatch({type:SET_CREDENTIALS,token});
+}
+
+export const changeStatus = () => (dispatch) => {
+  dispatch({type:STATUS_CHANGE})
 }
 
 // export const changePassword = (password) => (dispatch,getState) => {
@@ -151,7 +155,10 @@ function login(state = initialState, action){
       return Object.assign({},state,{
         passwordChange:action.passwordChange
       })
-       
+    case STATUS_CHANGE:
+      return Object.assign({},state,{
+        status:0
+      })   
     default:
       return state
   }

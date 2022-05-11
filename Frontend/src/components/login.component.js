@@ -1,7 +1,7 @@
 import { message } from "antd";
 import React, { useState,useEffect } from "react";
 import { connect } from "react-redux";
-import  {loginRequest} from "../store/Reducers/login";
+import  {loginRequest,changeStatus} from "../store/Reducers/login";
 import { useNavigate } from "react-router"
 const Login =  (props) => {
     const [password,setPassword] = useState("");
@@ -10,7 +10,8 @@ const Login =  (props) => {
     useEffect(() =>{ 
         console.log("props status 200");
         if(props.status === 200){
-        navigate(`/admin/dashboard`);
+            props.changeStatus();
+            navigate(`/admin/dashboard`);
       }
         
     },[props])
@@ -52,6 +53,7 @@ const Login =  (props) => {
 
     const mapDispatchToProps = {
         loginRequest,
+        changeStatus
       }
       const mapStateToProps = (state) => ({
         status:state.login.status,

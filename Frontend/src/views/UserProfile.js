@@ -1,5 +1,5 @@
-import React from "react";
-
+import React,{useState,useEffect} from "react";
+import axios from "axios";
 // react-bootstrap components
 import {
   Badge,
@@ -12,8 +12,38 @@ import {
   Row,
   Col,
 } from "react-bootstrap";
-
+import {message } from "antd";
 function User() {
+ 
+  const handleSubmit = (e) => {
+      e.preventDefault();
+      // console.log(e.target[0].value+e.target[1].value+e.target[2].value);
+      var postData = {
+        name: e.target[0].value+" "+e.target[1].value,
+        email: e.target[2].value,
+      };
+      
+      let axiosConfig = {
+        headers: {
+            'Content-Type': 'application/json',
+            "Access-Control-Allow-Origin": "*",
+            "Authorization":localStorage.getItem("token")
+          }
+      };
+      
+      axios.post('http://localhost:3001/pages/updateprofile', postData, axiosConfig)
+      .then((res) => {
+        if(res.status == 200){
+          message.success("Profile Updated Successfully.");
+          return;
+        }
+        message.error("Profile Updation failed.");
+      })
+      .catch((err) => {
+        message.error("Profile Updation failed.");
+        console.log("AXIOS ERROR: ", err);
+      })
+  }
   return (
     <>
       <Container fluid>
@@ -24,8 +54,8 @@ function User() {
                 <Card.Title as="h4">Edit Profile</Card.Title>
               </Card.Header>
               <Card.Body>
-                <Form>
-                  <Row>
+                <Form onSubmit={(e) => handleSubmit(e)}>
+                  {/* <Row>
                     <Col className="pr-1" md="5">
                       <Form.Group>
                         <label>Company (disabled)</label>
@@ -58,14 +88,14 @@ function User() {
                         ></Form.Control>
                       </Form.Group>
                     </Col>
-                  </Row>
+                  </Row> */}
                   <Row>
                     <Col className="pr-1" md="6">
                       <Form.Group>
                         <label>First Name</label>
                         <Form.Control
-                          defaultValue="Mike"
-                          placeholder="Company"
+                          defaultValue=""
+                          placeholder="first name"
                           type="text"
                         ></Form.Control>
                       </Form.Group>
@@ -74,15 +104,15 @@ function User() {
                       <Form.Group>
                         <label>Last Name</label>
                         <Form.Control
-                          defaultValue="Andrew"
-                          placeholder="Last Name"
+                           defaultValue=""
+                           placeholder="last name"
                           type="text"
                         ></Form.Control>
                       </Form.Group>
                     </Col>
                   </Row>
                   <Row>
-                    <Col md="12">
+                    {/* <Col md="12">
                       <Form.Group>
                         <label>Address</label>
                         <Form.Control
@@ -91,9 +121,20 @@ function User() {
                           type="text"
                         ></Form.Control>
                       </Form.Group>
+                    </Col> */}
+                    <Col className="pl-1" md="4">
+                      <Form.Group>
+                        <label htmlFor="exampleInputEmail1">
+                          Email address
+                        </label>
+                        <Form.Control
+                          placeholder="Email"
+                          type="email"
+                        ></Form.Control>
+                      </Form.Group>
                     </Col>
                   </Row>
-                  <Row>
+                  {/* <Row>
                     <Col className="pr-1" md="4">
                       <Form.Group>
                         <label>City</label>
@@ -138,7 +179,7 @@ function User() {
                         ></Form.Control>
                       </Form.Group>
                     </Col>
-                  </Row>
+                  </Row> */}
                   <Button
                     className="btn-fill pull-right"
                     type="submit"
@@ -151,64 +192,7 @@ function User() {
               </Card.Body>
             </Card>
           </Col>
-          <Col md="4">
-            <Card className="card-user">
-              <div className="card-image">
-                <img
-                  alt="..."
-                  src={
-                    require("assets/img/photo-1431578500526-4d9613015464.jpeg")
-                      .default
-                  }
-                ></img>
-              </div>
-              <Card.Body>
-                <div className="author">
-                  <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <img
-                      alt="..."
-                      className="avatar border-gray"
-                      src={require("assets/img/faces/face-3.jpg").default}
-                    ></img>
-                    <h5 className="title">Mike Andrew</h5>
-                  </a>
-                  <p className="description">michael24</p>
-                </div>
-                <p className="description text-center">
-                  "Lamborghini Mercy <br></br>
-                  Your chick she so thirsty <br></br>
-                  I'm in that two seat Lambo"
-                </p>
-              </Card.Body>
-              <hr></hr>
-              <div className="button-container mr-auto ml-auto">
-                <Button
-                  className="btn-simple btn-icon"
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                  variant="link"
-                >
-                  <i className="fab fa-facebook-square"></i>
-                </Button>
-                <Button
-                  className="btn-simple btn-icon"
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                  variant="link"
-                >
-                  <i className="fab fa-twitter"></i>
-                </Button>
-                <Button
-                  className="btn-simple btn-icon"
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                  variant="link"
-                >
-                  <i className="fab fa-google-plus-square"></i>
-                </Button>
-              </div>
-            </Card>
-          </Col>
+         
         </Row>
       </Container>
     </>

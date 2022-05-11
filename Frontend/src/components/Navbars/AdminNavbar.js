@@ -2,11 +2,14 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { Navbar, Container, Nav, Dropdown, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 import routes from "routes.js";
 
 function Header() {
   const location = useLocation();
+  let navigate = useNavigate();
+  // const history = useHistory();
   const mobileSidebarToggle = (e) => {
     e.preventDefault();
     document.documentElement.classList.toggle("nav-open");
@@ -41,19 +44,21 @@ function Header() {
           <Navbar.Brand
             href="#home"
             onClick={(e) => e.preventDefault()}
-            className="mr-2"
+            className="mr-2 navbar-title"
           >
             {getBrandText()}
           </Navbar.Brand>
         </div>
+        <div>
         <Navbar.Toggle aria-controls="basic-navbar-nav" className="mr-2">
           <span className="navbar-toggler-bar burger-lines"></span>
           <span className="navbar-toggler-bar burger-lines"></span>
           <span className="navbar-toggler-bar burger-lines"></span>
         </Navbar.Toggle>
+        <></>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="nav mr-auto" navbar>
-            <Nav.Item>
+            {/* <Nav.Item>
               <Nav.Link
                 data-toggle="dropdown"
                 href="#pablo"
@@ -63,8 +68,8 @@ function Header() {
                 <i className="nc-icon nc-palette"></i>
                 <span className="d-lg-none ml-1">Dashboard</span>
               </Nav.Link>
-            </Nav.Item>
-            <Dropdown as={Nav.Item}>
+            </Nav.Item> */}
+            {/* <Dropdown as={Nav.Item}>
               <Dropdown.Toggle
                 as={Nav.Link}
                 data-toggle="dropdown"
@@ -175,18 +180,23 @@ function Header() {
                   Separated link
                 </Dropdown.Item>
               </Dropdown.Menu>
-            </Dropdown>
+            </Dropdown> */}
             <Nav.Item>
               <Nav.Link
                 className="m-0"
                 href="#pablo"
-                onClick={(e) => e.preventDefault()}
+                onClick={(e) => {
+                  // e.preventDefault()
+                  localStorage.clear();
+                  navigate(`/access/login`);
+                }}
               >
                 <span className="no-icon">Log out</span>
               </Nav.Link>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>
+        </div>
       </Container>
     </Navbar>
   );

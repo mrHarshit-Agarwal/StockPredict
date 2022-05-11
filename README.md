@@ -6,7 +6,7 @@ The total volume of the stocks in the market is provided, with this information,
 
 The algorithms can reveal complex patterns characterized by non-linearity as well as some relations that are difficult to detect with linear algorithms. These algorithms also prove more effectiveness and multicollinearity than the linear regressions ones.
 
-Our project's aim is to use ML algorithms based on LSTM and GRU to forecast the adjusted closing prices for a portfolio of assets,the main objective here is to obtain the most accurate trained algorithm, to predict future values for our portfolio.
+Our project's aim is to use ML algorithms based on LSTM to forecast the adjusted closing prices for a portfolio of assets,the main objective here is to obtain the most accurate trained algorithm, to predict future values for our portfolio.
 
 A full stack web application is used to display the stock prediction graphs to the user. 
 Tools & Technology Used: Python, JavaScript, ReactJS, NodeJS, MongoDB

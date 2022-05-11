@@ -1,0 +1,11 @@
+.dropdown-menu {
+    height: 370px;
+    overflow-y: scroll;
+  }
+  .images{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    flex-direction: column;
+    align-items: center;
+  }

@@ -9,7 +9,6 @@ router.post("/feedback", async (req, res) => {
   var feedback = new Feedback({
     name: req.body.name,
     desc: req.body.desc,
-    email:req.body.email
     
   });
 
