@@ -28,7 +28,7 @@ plt.figure(figsize = (15,9))
 plt.plot(data[['Close']])
 #plt.xticks(ticks,label,args)    
 plt.xticks(range(0,data.shape[0],500),data['Date'].loc[::500],rotation=45)
-plt.title("Amazon Stock Price",fontsize=18, fontweight='bold')
+plt.title("Bajaj Finance Stock Price",fontsize=18, fontweight='bold')
 plt.xlabel('Date',fontsize=18)
 plt.ylabel('Close Price (USD)',fontsize=18)
 plt.show()
@@ -39,7 +39,7 @@ plt.show()
 
 # %%
 price = data[['Close']]
-price.info()
+# price.info()
 
 # %%
 from sklearn.preprocessing import MinMaxScaler
@@ -87,8 +87,6 @@ x_train = torch.from_numpy(x_train).type(torch.Tensor)
 x_test = torch.from_numpy(x_test).type(torch.Tensor)
 y_train_lstm = torch.from_numpy(y_train).type(torch.Tensor)
 y_test_lstm = torch.from_numpy(y_test).type(torch.Tensor)
-y_train_gru = torch.from_numpy(y_train).type(torch.Tensor)
-y_test_gru = torch.from_numpy(y_test).type(torch.Tensor)
 
 # %%
 input_dim = 1
