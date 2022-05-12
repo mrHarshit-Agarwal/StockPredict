@@ -1,4 +1,5 @@
 
+# %%
 import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 
@@ -6,13 +7,14 @@ import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 # For example, running this (by clicking run or pressing Shift+Enter) will list all files under the input directory
 
 import os
-for dirname, _, filenames in os.walk('archive/amazon.csv'):
+filepath = './Backend/NIFTY/BAJAJFINSV.csv'
+for dirname, _, filenames in os.walk(filepath):
     for filename in filenames:
         print(os.path.join(dirname, filename))
 
 
 # %%
-filepath = 'archive/amazon.csv'
+
 data = pd.read_csv(filepath)
 data = data.sort_values('Date')
 data.head()

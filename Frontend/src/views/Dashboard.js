@@ -288,8 +288,48 @@ export default () => {
     <h2 className="title">{company}</h2>
     <img src={"http://localhost:3001/"+precompany+'.png'} height={500} width={900} alt="showing screen capture" />
 
-    <p className="space"></p>
+    <p className="space">
     <img src={"http://localhost:3001/"+company+'.png'} height={500} width={900} alt="showing screen capture" />
+    </p>
+
+    <div>
+      <table>
+    <thead>
+        <tr>
+          <th>Company</th>
+          <th>Train Score</th>
+          <th>Test Score</th>
+        </tr>
+        </thead>
+          <tbody>
+            <tr>
+              <td>Adani Ports</td>
+              <td>27.11 RMSE</td>
+              <td>16.70 RMSE</td>
+            </tr>
+            <tr>
+              <td>Asian Paint</td>
+              <td>102.34 RMSE</td>
+              <td>44.50 RMSE</td>
+            </tr>
+            <tr>
+              <td>Axis Bank</td>
+              <td>41.41 RMSE</td>
+              <td>21.32 RMSE</td>
+            </tr>
+            <tr>
+              <td>Bajaj Auto</td>
+              <td>68.80 RMSE</td>
+              <td>133.55 RMSE</td>
+            </tr>
+             <tr>
+             <td>Bajaj Finsv</td>
+             <td>105.29 RMSE</td>
+             <td>1164.40 RMSE</td>
+           </tr>
+           </tbody>
+           </table>
+    </div>
    </div>
 </>
 )

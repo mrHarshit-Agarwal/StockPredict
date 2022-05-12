@@ -23,3 +23,15 @@
     margin-top: 10px;
     margin-bottom: 10px;
   }
+
+  td{
+    padding: 15px;
+    border: 1px solid black;
+  }
+  th{
+    border: 1px solid black;
+  }
+
+  table{
+    margin-top: 20px;
+  }
