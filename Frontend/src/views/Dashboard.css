@@ -9,3 +9,29 @@
     flex-direction: column;
     align-items: center;
   }
+
+  .title{
+    margin-top: 20px;
+    
+  }
+
+  .title-2{
+    margin-bottom: 15px;
+  }
+
+  .space{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  td{
+    padding: 15px;
+    border: 1px solid black;
+  }
+  th{
+    border: 1px solid black;
+  }
+
+  table{
+    margin-top: 20px;
+  }

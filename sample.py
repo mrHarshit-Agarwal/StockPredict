@@ -3,11 +3,12 @@ import pandas as pd
 
  
 import os
-for dirname, _, filenames in os.walk('goldman.csv'):
+path = './Backend/NIFTY/ZEEL.csv'
+for dirname, _, filenames in os.walk(path):
     for filename in filenames:
         print(os.path.join(dirname, filename))
  
-filepath = 'goldman.csv'
+filepath = path
 data = pd.read_csv(filepath)
 data = data.sort_values('Date')
 data.head()
@@ -20,7 +21,7 @@ sns.set_style("darkgrid")
 plt.figure(figsize = (15,9))
 plt.plot(data[['Close']])   
 plt.xticks(range(0,data.shape[0],500),data['Date'].loc[::500],rotation=45)
-plt.title("goldman sachs Stock Price",fontsize=18, fontweight='bold')
+plt.title("ZEEL Stock Price",fontsize=18, fontweight='bold')
 plt.xlabel('Date',fontsize=18)
 plt.ylabel('Close Price (USD)',fontsize=18)
 plt.show() 
