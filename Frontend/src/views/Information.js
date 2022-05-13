@@ -45,7 +45,7 @@ const Information = () => {
           <img src={require("../assets/img/result.png")} alt="dumy-data" className="image" width={500} height={299} /><br />
           <p className="para">This proposes RNN based on LSTM built to forecast future values of stocks.  the result of our model has shown some promising result. The testing result conform that our 
             model is capable of tracing the evolution of opening prices and closing prices both. For our future work we will try to find the best sets for bout data length and number of training epochs 
-            that beater suit our assets and maximize our predictions accuracy.</p><br />
+            that better suit our assets and maximize our predictions accuracy.</p><br />
         </div>
       </div>
     );
